@@ -1,0 +1,56 @@
+{
+  "_doc": {
+    "training": {
+      "gamma": "Facteur d'actualisation des récompenses futures (0=court terme, 1=long terme)",
+      "learning_rate": "Taux d'apprentissage de l'optimiseur Adam",
+      "memory_size": "Taille maximale du replay buffer (nombre d'expériences mémorisées)",
+      "batch_size": "Nombre d'expériences tirées aléatoirement à chaque mise à jour du réseau",
+      "train_every": "Fréquence d'entraînement : un update tous les N pas de simulation",
+      "tau": "Taux de mise à jour douce du réseau cible (soft update)"
+    },
+    "epsilon": {
+      "start": "Valeur initiale d'epsilon (exploration 100% aléatoire au départ)",
+      "end": "Valeur minimale d'epsilon (exploration résiduelle en fin d'entraînement)",
+      "decay": "Facteur multiplicatif de décroissance d'epsilon après chaque épisode"
+    },
+    "logging": {
+      "print_every": "Affiche les stats tous les N épisodes",
+      "moy_target": "Score moyen cible pour considérer l'entraînement comme réussi",
+      "moy_size": "Nombre d'épisodes utilisés pour calculer la moyenne glissante du score",
+      "max_rep": "Nombre maximum d'épisodes d'entraînement avant arrêt forcé"
+    },
+    "lander": {
+      "fuel_penalty": "Pénalité supplémentaire à chaque usage moteur (actions 1/2/3). 0=désactivé, 0.1=léger, 1.0=fort. S'ajoute aux coûts natifs de gym.",
+      "leg_engine_penalty": "Pénalité quand les moteurs sont utilisés alors qu'un pied touche le sol (évite de rebondir). 0=désactivé.",
+      "enable_wind": "Active le vent dans la simulation (true/false)",
+      "wind_power": "Force du vent (0.0 à 20.0, défaut gym=15.0)",
+      "turbulence_power": "Intensité des turbulences (0.0 à 2.0, défaut gym=1.5)"
+    }
+  },
+  "training": {
+    "gamma": 0.99,
+    "learning_rate": 0.0001,
+    "memory_size": 300000,
+    "batch_size": 256,
+    "train_every": 4,
+    "tau": 0.001
+  },
+  "epsilon": {
+    "start": 1.0,
+    "end": 0.05,
+    "decay": 0.9985
+  },
+  "logging": {
+    "print_every": 20,
+    "moy_target": 100.0,
+    "moy_size": 100,
+    "max_rep": 5000
+  },
+  "lander": {
+    "fuel_penalty": 0.3,
+    "leg_engine_penalty": 1.0,
+    "enable_wind": true,
+    "wind_power": 15.0,
+    "turbulence_power": 1.5
+  }
+}
