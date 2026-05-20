@@ -256,8 +256,4 @@ Pour un scénario `cases/<nom>`, un entraînement complet produit :
 
 Les fichiers `*.pth` et `*.csv` sont ignorés par défaut (cf. [.gitignore](.gitignore)) — seuls les rapports `scores.jpg` peuvent être versionnés à des fins de comparaison.
 
----
 
-## Licence
-
-Projet académique réalisé dans le cadre d'un cursus Epitech. Le code est fourni à des fins pédagogiques. Toute réutilisation devra créditer les auteurs.
